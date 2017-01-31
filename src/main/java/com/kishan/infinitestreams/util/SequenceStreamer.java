@@ -19,8 +19,7 @@ public final class SequenceStreamer {
             ) {
                 BigInteger index = BigInteger.ONE;
                 jsonGenerator.writeStartArray();
-                Iterable<BigInteger> bigIntegerIterable = bigIntegerStream::iterator;
-                for(BigInteger v: bigIntegerIterable) {
+                for(BigInteger v: (Iterable<BigInteger>) bigIntegerStream::iterator) {
                     try {
                         jsonGenerator.writeObject(new Sequence(index, v));
                         index = index.add(BigInteger.ONE);
