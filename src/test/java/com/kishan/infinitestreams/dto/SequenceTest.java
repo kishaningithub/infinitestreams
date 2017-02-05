@@ -13,7 +13,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class SequenceTest {
 
     private static final ObjectMapper MAPPER = Jackson.newObjectMapper();
-    private final Sequence sequence = new Sequence(new BigInteger("100000000000000000000000000000000000000000"), new BigInteger("173402521172797813159685037284371942044301"));
+    private static final Sequence sequence = new Sequence(new BigInteger("100000000000000000000000000000000000000000"), new BigInteger("173402521172797813159685037284371942044301"));
 
     @Test
     public void serializesToJSON() throws Exception {

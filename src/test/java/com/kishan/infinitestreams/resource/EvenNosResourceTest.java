@@ -15,7 +15,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class EvenNosResourceTest {
 
     @Rule
-    public static final ResourceTestRule resources = ResourceTestRule.builder()
+    public final ResourceTestRule resources = ResourceTestRule.builder()
             .addResource(new EvenNosResource())
             .build();
 
