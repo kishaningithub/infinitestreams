@@ -1,5 +1,6 @@
 # Infinite streams in dropwizard
 [![Build Status](https://travis-ci.org/kishaningithub/infinitestreams.svg?branch=master)](https://travis-ci.org/kishaningithub/infinitestreams)
+[![Codecov](https://img.shields.io/codecov/c/github/kishaningithub/infinitestreams.svg)](https://codecov.io/gh/kishaningithub/infinitestreams)
 
 Implementation of infinite sequences as REST services.
 
@@ -30,11 +31,10 @@ http://localhost:8080/even?limit=10
 
 # Build
 
-Run `./gradlew clean oneJar`. The resulting JAR will be saved as `./build/libs/infinite-streams-<<version>>-standalone.jar`.
+Run `./gradlew clean build`. The resulting JAR will be saved as `./build/libs/infinite-streams-<<version>>-all.jar`.
 
-This example is using the [Gradle OneJar Plugin](https://github.com/rholder/gradle-one-jar) which will create
-a JAR file of the project including all dependencies, similar to the [Maven Assembly Plugin](http://maven.apache.org/plugins/maven-assembly-plugin/)
-or the [Maven Shade Plugin](http://maven.apache.org/plugins/maven-shade-plugin/).
+This example is using the [Gradle Shadow Plugin](https://github.com/johnrengelman/shadow) which is gradle
+version of the [Maven Shade Plugin](http://maven.apache.org/plugins/maven-shade-plugin/).
 
 
 # Run

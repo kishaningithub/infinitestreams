@@ -1,7 +1,7 @@
 package com.kishan.infinitestreams.resource;
 
 import com.codahale.metrics.annotation.Timed;
-import com.kishan.infinitestreams.util.SequenceStreamer;
+import com.kishan.infinitestreams.streamer.ResponseSequenceStreamer;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -30,7 +30,7 @@ public class FibonacciResource {
         if(limit.isPresent()) {
             fibonacciStream = fibonacciStream.limit(limit.get());
         }
-        return Response.ok(SequenceStreamer.from(fibonacciStream)).build();
+        return Response.ok(new ResponseSequenceStreamer(fibonacciStream)).build();
     }
 
 }

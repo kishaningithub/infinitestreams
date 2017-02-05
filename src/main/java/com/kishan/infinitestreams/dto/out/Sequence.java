@@ -1,13 +1,13 @@
 package com.kishan.infinitestreams.dto.out;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.math.BigInteger;
 
 @AllArgsConstructor
 @NoArgsConstructor
+@EqualsAndHashCode
+@ToString
 @Getter
 public class Sequence {
     private BigInteger index;

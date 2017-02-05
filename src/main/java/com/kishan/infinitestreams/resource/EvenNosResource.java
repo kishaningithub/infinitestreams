@@ -1,7 +1,8 @@
 package com.kishan.infinitestreams.resource;
 
 import com.codahale.metrics.annotation.Timed;
-import com.kishan.infinitestreams.util.SequenceStreamer;
+import com.kishan.infinitestreams.streamer.ResponseSequenceStreamer;
+import lombok.extern.slf4j.Slf4j;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -15,6 +16,7 @@ import java.util.stream.Stream;
 
 @Path("even")
 @Produces(MediaType.APPLICATION_JSON)
+@Slf4j
 public class EvenNosResource {
 
     @GET
@@ -25,7 +27,7 @@ public class EvenNosResource {
         if(limit.isPresent()) {
             evenNoStream = evenNoStream.limit(limit.get());
         }
-        return Response.ok(SequenceStreamer.from(evenNoStream)).build();
+        return Response.ok(new ResponseSequenceStreamer(evenNoStream)).build();
     }
 
 }
