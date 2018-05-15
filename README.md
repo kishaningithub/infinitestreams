@@ -2,14 +2,15 @@
 
 [![Build Status](https://travis-ci.org/kishaningithub/infinitestreams.svg?branch=master)](https://travis-ci.org/kishaningithub/infinitestreams)
 [![Codecov](https://img.shields.io/codecov/c/github/kishaningithub/infinitestreams.svg)](https://codecov.io/gh/kishaningithub/infinitestreams)
+[![Latest release](https://img.shields.io/github/release/kishaningithub/infinitestreams.svg)](https://github.com/kishaningithub/infinitestreams/releases)
 
 Implementation of infinite sequences as REST services.
 
 ## Start Server
 
 ```bash
-docker pull kishanb/infinitestreams:1.0.0
-docker run -p 8080:8080 -p 8081:8081 kishanb/infinitestreams:1.0.0
+docker pull kishanb/infinitestreams:<<latest release>>
+docker run -p 8080:8080 -p 8081:8081 kishanb/infinitestreams:<<latest release>>
 ```
 
 ## Stream of fibonacci nos
@@ -28,7 +29,7 @@ curl 'http://localhost:8080/even?limit=10'
 
 ## Dropwizard version
 
-1.0.5
+1.3.2
 
 ## Build
 
@@ -40,5 +41,5 @@ version of the [Maven Shade Plugin](http://maven.apache.org/plugins/maven-shade-
 ## Run
 
 ```bash
-java -jar build/libs/infinite-streams-<<version>>-standalone.jar server
+java -jar build/libs/infinite-streams-all.jar server
 ```
