@@ -7,7 +7,7 @@ env:
     - secure: "MkZPTTrunsWZ6QRWOz83NBl+wGbC/tI9jchdlmtPtCSwg/YyOSSoG6+SSOcS0tmmRHEWqA1prstQYrK+V8OpPwnX5NqRzpoz/gKaAbrb88vMglW/MGQav/G3gPqYJFHXSuq8SsB7OqyJGWNrM6n8EOyvAyqXuEOL68RHsBa1iPogx+uUbQTx6Wu1WWsLETGEyLNd2fVC5/LUbueEvezf/uwChkp/3txiSfZ2ZNUGX2vi7T3HFWCGN7H+FByskKVXaWHivXXzPVXiIwWAQWuwnrpkAR9eAVLvGWdrmRklbobcPU1Dn3+rN4VbzoJGphUUF7AIVZwdljblL0KHVY4uIDzvqwFKPyc9Bxf+oosC8IPX+pXm+H+kGRflMBNSVVCu3px1p2h+92G2BK2ZmYB4gro9ZFyIoRHoLz+VEUMrrb9YKnTMAm2VdcAk2+VOXAerrqNz4bPq5dT6fhyidoMaUFeHvWK12z01uSCUVNngDXs7IquYx+B7fWtkvmlZug1uLzC4LWl2wJmm1AeYqyHQQ4EGr6g+2OCFpow9ki5nkv47Po/AKBYln/duSBwsCcMEH9/m1fFsa1QOUo+I/yHRvqWettxOJIgl8sJ1YRllp+GEGaBWSk//PrwvdPVt4Pl+RABeo/8SAKQYSChOwimMGqMnFsVTiOge4S0NzNfpGJ4="
 script:
   - ./gradlew clean build jacocoTestReport --stacktrace
-  - docker build -t kishanb/infinitestreams:$TRAVIS_COMMIT
+  - docker build -t kishanb/infinitestreams:$TRAVIS_COMMIT .
 after_success:
   - bash <(curl -s https://codecov.io/bash)
   - test -n "$TRAVIS_TAG" && docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
